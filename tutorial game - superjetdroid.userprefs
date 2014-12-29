@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TouchCode.cs">
+    <Files>
+      <File FileName="Assets\Scripts\TouchCode.cs" Line="22" Column="25" />
+      <File FileName="Assets\Scripts\Player.cs" Line="18" Column="45" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="12" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
