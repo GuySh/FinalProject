@@ -10,7 +10,8 @@ public class Player : MonoBehaviour {
 	public float airSpeedMultiplier = .3f;
 
 	private Animator animator;
-	private PlayerController controller;
+	public PlayerController controller;
+	//public TouchCode controller;
 	//private TouchCode controller;
 
 	void Start (){

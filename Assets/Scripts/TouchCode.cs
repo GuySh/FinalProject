@@ -6,32 +6,31 @@ public class TouchCode : MonoBehaviour {
 
 	public Vector2 moving = new Vector2();
 	public string direction = "";
+	
+	//public GameObject playerObj;
 
-	Player player;
-	public GameObject respawnPrefab;
-	public GameObject respawn;
-
+	//public PlayerController player;
 	// Use this for initialization
 	void Start () {
-		//player = GameObject.FindGameObjectWithTag ("Player");
+		//player = GetComponent<PlayerController> ();
 
 	}
 	// Update is called once per frame
 	void Update ()
 	{
-		//player.moving.y = 0;
-		//player.GetComponentInChildren (PlayerController);
 		moving.x = moving.y = 0;
-		//player.moving.x = player.moving.y = 0;
 
 		int fingerCount = 0;
 		foreach (Touch touch in Input.touches) {
 			if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
 				fingerCount++;
+
+
 			if(direction == "up")
 			{
-				player.moving.y = 1;
+				//player.moving.y = 1;
 				moving.y = 1;
+				print ("xxxxxxxxxxxxxxxxxxxxxxxxxxxx" + " " + moving.y);
 				//player.setUp();
 			}
 			
@@ -41,4 +40,11 @@ public class TouchCode : MonoBehaviour {
 		
 	
 	}
+
+
+	void OnTriggerEnter2D(Collider2D target)
+	{
+		print ("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWwwwwwwwoooooooooooooooooooooooooooooo");
+	}
+
 }

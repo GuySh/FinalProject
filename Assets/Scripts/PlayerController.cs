@@ -4,12 +4,13 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public Vector2 moving  = new Vector2();
-
-	//PlayerController player;
+	public bool up,left,right;
 
 	// Use this for initialization
 	void Start () {
-		//player = FindObjectOfType<PlayerController>();
+		up = false;
+		left = false;
+		right = false;
 	}
 	
 	// Update is called once per frame
@@ -18,17 +19,18 @@ public class PlayerController : MonoBehaviour {
 
 		moving.x = moving.y = 0;
 
-		if (Input.GetKey ("right")) 
+
+		if (Input.GetKey ("right") || right) 
 		{
 			moving.x = 1;
 		}
-		else if (Input.GetKey ("left")) 
+		else if (Input.GetKey ("left") || left) 
 		{
 			moving.x = -1;	
 		}
 
 
-		if (Input.GetKey ("up")) 
+		if (Input.GetKey ("up") || up)
 		{
 			moving.y = 1;
 		}
@@ -36,13 +38,37 @@ public class PlayerController : MonoBehaviour {
 		{
 			moving.y = -1;	
 		}
-
-	
+			
 	}
 
-	public void setUp()
+	public void moveUp()
 	{
-		moving.y = 1;
+		up = true;
 	}
 
+	public void moveLeft()
+	{
+		left = true;
+	}
+
+	public void moveRight()
+	{
+		right = true;
+	}
+
+	public void clearUp()
+	{
+		up = false;
+	}
+	
+	public void clearLeft()
+	{
+		left = false;
+	}
+	
+	public void clearRight()
+	{
+		right = false;
+	}
+	
 }
