@@ -3,6 +3,7 @@ using System.Collections;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine.UI;
+using System.IO;
 
 public class connectionMenu : MonoBehaviour {
 
@@ -44,5 +45,28 @@ public class connectionMenu : MonoBehaviour {
 	public void loadGame()
 	{
 		Application.LoadLevel("PushBlockStaging");
+	}
+
+	public void showAllScripts()
+	{
+		string filesList = "";
+
+		string [] fileEntries = Directory.GetFiles(Application.streamingAssetsPath+"/Scripts");
+		//string [] fileEntries = Directory.GetFiles("jar:file://" + Application.dataPath + "!/Assets/Scripts");
+		foreach (string fileName in fileEntries) 
+		{
+			filesList+=fileName + "\n";
+		}
+
+
+		/*
+		if(fileEntries.Length > 0)
+		{
+			filesList = "Error finding scripts";
+		}
+*/
+		//filesList = fileEntries.Length.ToString();
+
+		p.setText(filesList);
 	}
 }
