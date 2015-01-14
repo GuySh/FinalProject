@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Net;
-using System.Net.Sockets;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
+using System;
+using System.Text;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 public class connectionMenu : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject go;
 	public Panel p;
-	public string myIp = "waiting for ip";
-
+	
+	public List<string> chatHistory = new List<string>();
 	void Start () {
 	
 		go = GameObject.FindGameObjectWithTag ("Panel");
@@ -23,23 +25,24 @@ public class connectionMenu : MonoBehaviour {
 	
 	}
 
-	public void setMyIp()
+	IEnumerator LinkStreamingFolder()
 	{
-		IPHostEntry host;
-		string localIP = "?";
-		host = Dns.GetHostEntry(Dns.GetHostName());
-		foreach (IPAddress ip in host.AddressList)
-		{
-			if (ip.AddressFamily == AddressFamily.InterNetwork)
-			{
-				localIP = ip.ToString();
-			}
-		}
+		string FinalPath = "file://"+Application.streamingAssetsPath + "/test.cs";
+		WWW linkstream = new WWW(FinalPath);
+		yield return linkstream;
+		p.setText(linkstream.text);
+	} 
 
-		myIp = localIP;
-		p.setText(myIp);
+	public void wwwTest()
+	{
+		WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		//WWW loadDB = new WWW(Application.persistentDataPath + "/test.cs");
+		while (!loadDB.isDone) {
+				}
+						
+		p.setText(loadDB.text);
+
 	}
-
 
 
 	public void loadGame()
@@ -49,24 +52,42 @@ public class connectionMenu : MonoBehaviour {
 
 	public void showAllScripts()
 	{
-		string filesList = "";
 
-		string [] fileEntries = Directory.GetFiles(Application.streamingAssetsPath+"/Scripts");
-		//string [] fileEntries = Directory.GetFiles("jar:file://" + Application.dataPath + "!/Assets/Scripts");
+//		string filesList = "";
+
+		//LinkStreamingFolder ();
+		//string [] fileEntries = Directory.GetFiles (Application.streamingAssetsPath);
+
+		//string filePath = "jar:file://" + Application.dataPath + "!/assets/" + "";
+
+		/*
 		foreach (string fileName in fileEntries) 
 		{
 			filesList+=fileName + "\n";
 		}
 
-
-		/*
-		if(fileEntries.Length > 0)
-		{
-			filesList = "Error finding scripts";
-		}
-*/
-		//filesList = fileEntries.Length.ToString();
-
 		p.setText(filesList);
+		*/
 	}
+
+
+	public void showFiles()
+	{
+
+		//string temp = "jar:file://" + Application.dataPath + "!/assets/test.cs" + "\n\n" + Application.persistentDataPath + "/test.cs";
+		
+		p.setText (Application.dataPath + "\n" + Application.persistentDataPath + "\n" + Application.streamingAssetsPath + "\n" +Application.temporaryCachePath);
+	}
+
+
+	public void OnSubmit(BaseEventData eventData)
+	{
+		p.setText(eventData.currentInputModule.guiText.text);
+	}
+
+
+
+
+
 }
+
