@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{5B0BD324-65F8-F36A-7891-99F362F58F12}") = "tutorial game - superjetdroid", "Assembly-CSharp.csproj", "{8D3F7F8E-6DF1-F43C-9710-E00FCC5FE114}"
 EndProject
-Project("{5B0BD324-65F8-F36A-7891-99F362F58F12}") = "tutorial game - superjetdroid", "Assembly-UnityScript.unityproj", "{6EEACB83-6342-7DD4-7EFF-5FFA13D26260}"
+Project("{5B0BD324-65F8-F36A-7891-99F362F58F12}") = "tutorial game - superjetdroid", "Assembly-CSharp-Editor.csproj", "{17CCE30D-88C8-F5FF-E8F5-4873836AC571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,15 +15,15 @@ Global
 		{8D3F7F8E-6DF1-F43C-9710-E00FCC5FE114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D3F7F8E-6DF1-F43C-9710-E00FCC5FE114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D3F7F8E-6DF1-F43C-9710-E00FCC5FE114}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EEACB83-6342-7DD4-7EFF-5FFA13D26260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EEACB83-6342-7DD4-7EFF-5FFA13D26260}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EEACB83-6342-7DD4-7EFF-5FFA13D26260}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EEACB83-6342-7DD4-7EFF-5FFA13D26260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CCE30D-88C8-F5FF-E8F5-4873836AC571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CCE30D-88C8-F5FF-E8F5-4873836AC571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CCE30D-88C8-F5FF-E8F5-4873836AC571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CCE30D-88C8-F5FF-E8F5-4873836AC571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

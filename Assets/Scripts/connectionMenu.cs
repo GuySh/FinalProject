@@ -12,6 +12,8 @@ public class connectionMenu : MonoBehaviour {
 	// Use this for initialization
 	public GameObject go;
 	public Panel p;
+	public string textClass = "";
+	private WWW loadDB;
 	
 	public List<string> chatHistory = new List<string>();
 	void Start () {
@@ -35,12 +37,22 @@ public class connectionMenu : MonoBehaviour {
 
 	public void wwwTest()
 	{
-		WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
 		//WWW loadDB = new WWW(Application.persistentDataPath + "/test.cs");
 		while (!loadDB.isDone) {
 				}
-						
+
+
+		textClass = loadDB.text;
 		p.setText(loadDB.text);
+
+	}
+
+
+
+
+	public void sendClassToOtherSystem()
+	{
 
 	}
 

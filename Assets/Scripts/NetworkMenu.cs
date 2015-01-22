@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class NetworkMenu : MonoBehaviour {
@@ -47,6 +47,5 @@ public class NetworkMenu : MonoBehaviour {
 		{
 			GUILayout.Label ("Connctions: " + Network.connections.Length.ToString ());
 		}
-
 	}
 }

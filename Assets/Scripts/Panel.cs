@@ -21,16 +21,6 @@ public class Panel : MonoBehaviour {
 		text.text = t;
 	}
 
-	public void getIp()
-	{
-//		text.text = cm.myIp;
-	}
-
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 
 
 }
