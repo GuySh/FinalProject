@@ -16,5 +16,6 @@ public class HelloWorld : MonoBehaviour {
 	void Update () {
 		transform.Translate (new Vector3 (speed, 0, transform.position.z) * Time.deltaTime);
 	}
+
 }
   

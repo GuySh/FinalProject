@@ -6,14 +6,14 @@ public class MoveCapsule   : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () 
+	void Update () 	
 	{
-		if (Input.GetKey (KeyCode.UpArrow))
+		if (Input.GetKey (KeyCode.UpArrow))		// move the capsule up
 		{
 			transform.position += Vector3.up * Time.deltaTime * 5;
 		}
 
-		if (Input.GetKey (KeyCode.DownArrow))
+		if (Input.GetKey (KeyCode.DownArrow))	// move the capsule down
 		{
 			transform.position -= Vector3.up * Time.deltaTime * 5;
 		}

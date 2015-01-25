@@ -13,12 +13,12 @@ public class LevelSelect : MonoBehaviour {
 	
 	}
 
-	public void restart()
+	public void restart()		// load the current scene  
 	{
 		Application.LoadLevel (Application.loadedLevelName);
 	}
 
-	public void StartLevel1()
+	public void StartLevel1()		// load the PushBlockStaging scene  
 	{
 		Application.LoadLevel ("PushBlockStaging");
 	}

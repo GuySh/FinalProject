@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NetworkMenu : MonoBehaviour {
+public class NetworkMenu : MonoBehaviour {		// --- for testing --- 
 
 	public string connectionIp = "127.0.0.1";
 	public int portNumber = 8632;

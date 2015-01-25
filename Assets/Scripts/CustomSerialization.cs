@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CustomSerialization : MonoBehaviour
+public class CustomSerialization : MonoBehaviour		// ----- testing ---- send data between two devices
 {
 
 	public float health = 100;

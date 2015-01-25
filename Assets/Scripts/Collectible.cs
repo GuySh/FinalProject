@@ -13,9 +13,9 @@ public class Collectible : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter2D(Collider2D target)
+	void OnTriggerEnter2D(Collider2D target)			
 	{
-		if (target.gameObject.tag == "Player")
+		if (target.gameObject.tag == "Player")	// destroy the collictible if the player touched it
 		{
 			Destroy(gameObject);		
 		}

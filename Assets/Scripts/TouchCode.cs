@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TouchCode : MonoBehaviour {
+public class TouchCode : MonoBehaviour {  // --- for testing! ---
 
 
 	public Vector2 moving = new Vector2();

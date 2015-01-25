@@ -54,8 +54,8 @@
      <Compile Include="Assets\Scripts\MoveCapsule.cs" />
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
      <Compile Include="Assets\Scripts\Panel.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\RandomSprite.cs" />
      <Compile Include="Assets\Scripts\TouchCode.cs" />
      <Compile Include="Assets\Scripts\UserInputHandler.cs" />

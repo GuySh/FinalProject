@@ -2,21 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Panel : MonoBehaviour {
+public class Panel : MonoBehaviour {		// to be composed on panel
 
 	public Text text;
-	//connectionMenu cm;
-	//public GameObject go;
-
 	// Use this for initialization
 	void Start () {
 		text = gameObject.GetComponentInChildren<Text>();
-		//setText("miao miao");
-		//go = GameObject.FindGameObjectWithTag ("connectionGameObject");
-		//cm = go.GetComponent<connectionMenu>();
 	}
 
-	public void setText(string t)
+	public void setText(string t)		// set the panel text
 	{
 		text.text = t;
 	}

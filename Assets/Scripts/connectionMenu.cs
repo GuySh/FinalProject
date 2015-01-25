@@ -10,15 +10,15 @@ using System.Collections;
 public class connectionMenu : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject go;
-	public Panel p;
+	public GameObject go;		// pointer to game object
+	public Panel p;				// pointer to Panel panel in go
 	public string textClass = "";
-	private WWW loadDB;
+	private WWW loadFile;		
 	
 	public List<string> chatHistory = new List<string>();
 	void Start () {
 	
-		go = GameObject.FindGameObjectWithTag ("Panel");
+		go = GameObject.FindGameObjectWithTag ("Panel");	
 		p = go.GetComponent<Panel>();
 	}
 	
@@ -27,7 +27,7 @@ public class connectionMenu : MonoBehaviour {
 	
 	}
 
-	IEnumerator LinkStreamingFolder()
+	IEnumerator LinkStreamingFolder()		// --- testing ---
 	{
 		string FinalPath = "file://"+Application.streamingAssetsPath + "/test.cs";
 		WWW linkstream = new WWW(FinalPath);
@@ -35,16 +35,15 @@ public class connectionMenu : MonoBehaviour {
 		p.setText(linkstream.text);
 	} 
 
-	public void wwwTest()
+	public void wwwTest()			// --- testing --- getting test.cs file from android device and print the file content to screen
 	{
-		loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
-		//WWW loadDB = new WWW(Application.persistentDataPath + "/test.cs");
-		while (!loadDB.isDone) {
+		loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		while (!loadFile.isDone) {
 				}
 
 
-		textClass = loadDB.text;
-		p.setText(loadDB.text);
+		textClass = loadFile.text;
+		p.setText(loadFile.text);
 
 	}
 
@@ -57,12 +56,12 @@ public class connectionMenu : MonoBehaviour {
 	}
 
 
-	public void loadGame()
+	public void loadGame()		// load PushBlockStaging scene
 	{
 		Application.LoadLevel("PushBlockStaging");
 	}
 
-	public void showAllScripts()
+	public void showAllScripts()		// --- testing ---
 	{
 
 //		string filesList = "";
@@ -83,7 +82,7 @@ public class connectionMenu : MonoBehaviour {
 	}
 
 
-	public void showFiles()
+	public void showFiles()		// --- testing ---
 	{
 
 		//string temp = "jar:file://" + Application.dataPath + "!/assets/test.cs" + "\n\n" + Application.persistentDataPath + "/test.cs";
@@ -92,7 +91,7 @@ public class connectionMenu : MonoBehaviour {
 	}
 
 
-	public void OnSubmit(BaseEventData eventData)
+	public void OnSubmit(BaseEventData eventData)	// --- testing ---
 	{
 		p.setText(eventData.currentInputModule.guiText.text);
 	}
