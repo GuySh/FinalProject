@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using System.IO;
 
 public class CommunicationMenu : MonoBehaviour {
 
@@ -9,11 +10,19 @@ public class CommunicationMenu : MonoBehaviour {
 	public GameObject go;
 	public Panel p;
 
+	StreamReader fileReader = null;
+
 	public string connectionIp = "127.0.0.1";   //initial ip	
 	public int portNumber = 8632;				//initial ip
 	private bool connected = false;				// connected flag
 	public InputField portIn, ipIn;				// port and ip from the to set from the input fields
 	public string ip = " ";
+
+
+	private WWW loadFile;	
+	public string rpcString;
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -25,6 +34,9 @@ public class CommunicationMenu : MonoBehaviour {
 
 		go = GameObject.FindGameObjectWithTag ("IpInputField");				//find the objct "IpInputField"
 		ipIn = go.GetComponentInChildren<InputField>();						// get the InputFields component of the "CommunicationMenuCanvas" object
+
+
+		rpcString = "Rpc string is empty";
 	}
 	
 	// Update is called once per frame
@@ -85,12 +97,52 @@ public class CommunicationMenu : MonoBehaviour {
 		Int32.TryParse(portIn.text, out portNumber);	//get the port from the input field
 
 		Network.InitializeServer (1, portNumber, true);	// start the server
+
+		p.setText (Network.TestConnection ().ToString ());
 	}
 
 	public void printNumOfConnections()		// print the number of connections
 	{
 		p.setText ("Connections: " + Network.connections.Length.ToString ());
 	}
+
+
+	public void rpcSendButton()
+	{
+		if (connected) 
+		{
+			networkView.RPC ("sendString", RPCMode.Others, new object[]{rpcString});
+		}
+	}
+
+
+
+	[RPC]
+	public void sendString(string str)		// sed the string to client
+	{
+		rpcString = str;
+	}
+
+	public void printRpcString()
+	{
+		p.setText (rpcString);
+	}
+
+
+	public void wwwGetfileContent()			// --- testing --- getting test.cs file from android device and print the file content to screen
+	{
+		loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		while (!loadFile.isDone) {
+		}
+		
+
+		rpcString = loadFile.text;
+		p.setText(loadFile.text);
+		
+	}
+
+
+
 
 	
 }
