@@ -10,7 +10,7 @@ public class CommunicationMenu : MonoBehaviour {
 	public GameObject go;
 	public Panel p;
 
-	StreamReader fileReader = null;
+//	StreamReader fileReader = null;
 
 	public string connectionIp = "127.0.0.1";   //initial ip	
 	public int portNumber = 8632;				//initial ip
@@ -131,7 +131,7 @@ public class CommunicationMenu : MonoBehaviour {
 
 	public void wwwGetfileContent()			// --- testing --- getting test.cs file from android device and print the file content to screen
 	{
-		loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/HelloWorld.cs");
 		while (!loadFile.isDone) {
 		}
 		
@@ -139,6 +139,83 @@ public class CommunicationMenu : MonoBehaviour {
 		rpcString = loadFile.text;
 		p.setText(loadFile.text);
 		
+	}
+
+
+	public void makeTestFile()			// --- testing --- 
+	{
+		StreamWriter fileWriter = null;
+		string fileName = Application.persistentDataPath + "/" + "HelloWorldTest.cs";
+		fileWriter = File.CreateText(fileName);
+		fileWriter.WriteLine("Hello world");
+		fileWriter.Close();
+
+		p.setText (Application.persistentDataPath);
+		//p.setText("created HelloWorldTTest file");
+		
+	}
+
+
+	public void addHelloWorldComponent()
+	{
+		p.setText ("In addHelloWorldComponent");
+		//loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		//p.setText (loadFile.url);
+		if (File.Exists (Application.persistentDataPath + "/" + "HelloWorldTest.cs"))
+		{
+			p.setText ("File exist");
+		}
+		else
+		{
+			p.setText ("Not exist");
+			loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/HelloWorld.cs");
+			while (!loadFile.isDone) {
+			}
+
+			StreamWriter fileWriter = null;
+			string fileName = Application.persistentDataPath + "/" + "HelloWorldTest.cs";
+			fileWriter = File.CreateText(fileName);
+			fileWriter.WriteLine(loadFile.text);
+			fileWriter.Close();
+
+
+			//File.Copy (loadFile.url, Application.persistentDataPath + "/" + "HelloWorldTest.cs");
+		}
+		//go.AddComponent<HelloWorld>();
+	}
+
+
+	public void copyPng()
+	{
+		p.setText ("In copyJpg");
+		//loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		//p.setText (loadFile.url);
+		if (File.Exists (Application.persistentDataPath + "/" + "PositiveCopy.png"))
+		{
+			p.setText ("File exist");
+		}
+		else
+		{
+			p.setText ("Not exist");
+			loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/scaledPositive.png");
+			while (!loadFile.isDone) {
+			}
+
+			Stream fileWriter = null;
+			//StreamWriter fileWriter = null;
+			string fileName = Application.persistentDataPath + "/" + "PositiveCopy.png";
+			fileWriter = File.Create(fileName);
+			for(int i=0; i < loadFile.bytes.Length; i++)
+			{
+				fileWriter.WriteByte(loadFile.bytes[i]);
+			}
+			//fileWriter.WriteByte(loadFile.bytes);
+			fileWriter.Close();
+			
+			
+			//File.Copy (loadFile.url, Application.persistentDataPath + "/" + "HelloWorldTest.cs");
+		}
+		//go.AddComponent<HelloWorld>();
 	}
 
 

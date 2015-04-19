@@ -23,4 +23,9 @@ public class LevelSelect : MonoBehaviour {
 		Application.LoadLevel ("PushBlockStaging");
 	}
 
+	public void StartOtherAvatar1()		// load the PushBlockStaging scene  
+	{
+		Application.LoadLevel ("otherAvater");
+	}
+	
 }

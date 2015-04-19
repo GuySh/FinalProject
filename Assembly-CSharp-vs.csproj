@@ -49,10 +49,10 @@
      <Compile Include="Assets\Scripts\Collectible.cs" />
      <Compile Include="Assets\Scripts\CommunicationMenu.cs" />
      <Compile Include="Assets\Scripts\CustomSerialization.cs" />
-     <Compile Include="Assets\Scripts\HelloWorld.cs" />
      <Compile Include="Assets\Scripts\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\MoveCapsule.cs" />
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
+     <Compile Include="Assets\Scripts\OtherAvatar.cs" />
      <Compile Include="Assets\Scripts\Panel.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -60,7 +60,9 @@
      <Compile Include="Assets\Scripts\TouchCode.cs" />
      <Compile Include="Assets\Scripts\UserInputHandler.cs" />
      <Compile Include="Assets\Scripts\connectionMenu.cs" />
+     <Compile Include="Assets\StreamingAssets\HelloWorld.cs" />
      <Compile Include="Assets\StreamingAssets\test.cs" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
