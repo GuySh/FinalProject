@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using System.IO;
+using Mono.CSharp;
 
 public class CommunicationMenu : MonoBehaviour {
 
@@ -35,6 +36,8 @@ public class CommunicationMenu : MonoBehaviour {
 		go = GameObject.FindGameObjectWithTag ("IpInputField");				//find the objct "IpInputField"
 		ipIn = go.GetComponentInChildren<InputField>();						// get the InputFields component of the "CommunicationMenuCanvas" object
 
+
+		monoStart ();		///////////////////
 
 		rpcString = "Rpc string is empty";
 	}
@@ -111,7 +114,7 @@ public class CommunicationMenu : MonoBehaviour {
 	{
 		if (connected) 
 		{
-			networkView.RPC ("sendString", RPCMode.Others, new object[]{rpcString});
+			GetComponent<NetworkView>().RPC ("sendString", RPCMode.Others, new object[]{rpcString});
 		}
 	}
 
@@ -221,5 +224,55 @@ public class CommunicationMenu : MonoBehaviour {
 
 
 
+	public void TryMonoEval()
+	{
+		object resualt = Mono.CSharp.Evaluator.Evaluate("1+1;");
+		Mono.CSharp.Evaluator.Run("p.setText (resualt.ToString());");
+
+		//Debug.Log (resualt.ToString());
+	}
+
+	public void monoStart()
+	{
+		/*
+		int cnt = 0;
+		while (cnt < 2) {
+			// this needs to be run twice, as the references fail the first time through
+			foreach (System.Reflection.Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()) {
+				if (assembly == null) {
+					Debug.Log ("Null Assembly");
+					continue;
+				}
+				Debug.Log (assembly);
+				try {
+					Mono.CSharp.Evaluator.ReferenceAssembly (assembly);
+				} catch (NullReferenceException e) {
+					Debug.Log ("Bad Assembly");
+				}
+			}
+			Mono.CSharp.Evaluator.Evaluate ("1+2;");
+			cnt++;
+		}
+		Mono.CSharp.Evaluator.Run("using UnityEngine;");
+		Debug.Log (Mono.CSharp.Evaluator.GetUsing ());
+		*/
+	}
+
+	/*
+	public static CommunicationMenu instance;
+	void Awake ()
+	{
+		instance = this;
+	}
+*/
+
+	public void addJsTest()
+	{
+	//	UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(gameObject, "Assets/Scripts/CommunicationMenu.cs (271,3)", "JavaScriptTest");
+
+		//UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent (gameObject, "Assets/Scripts/CommunicationMenu.cs (268,3)", "JavaScriptTest");
+	}
+	
+	
 	
 }

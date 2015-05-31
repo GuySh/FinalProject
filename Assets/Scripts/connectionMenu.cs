@@ -93,7 +93,7 @@ public class connectionMenu : MonoBehaviour {
 
 	public void OnSubmit(BaseEventData eventData)	// --- testing ---
 	{
-		p.setText(eventData.currentInputModule.guiText.text);
+		p.setText(eventData.currentInputModule.GetComponent<GUIText>().text);
 	}
 
 

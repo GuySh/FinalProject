@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using Mono.CSharp;
 
 public class OtherAvatar : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class OtherAvatar : MonoBehaviour {
 	GameObject player;
 
 	void Start () {
+
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 		byte[] bytes = File.ReadAllBytes(Application.persistentDataPath + "/PositiveCopy.png");
@@ -16,11 +18,12 @@ public class OtherAvatar : MonoBehaviour {
 		texture.LoadImage(bytes);
 
 		//Sprite sprite = Sprite.Create(texture, new Rect(0,0,100, 100), new Vector2(0.5f,0.0f), 1.0f);
-		Sprite sprite = Sprite.Create(texture, new Rect(0,0, 80, 80), new Vector2(0,0));
+		Sprite sprite = Sprite.Create(texture, new Rect(0,0, 80, 80), new Vector2(.5f,.5f));
 		player.GetComponent<SpriteRenderer>().sprite = sprite;
-	
+
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	

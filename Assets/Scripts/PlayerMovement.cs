@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
+
 	public float speed = 10f; 							
 	public Vector2 maxVelocity = new Vector2(3, 5);		
 	public bool standing;
@@ -23,8 +24,8 @@ public class PlayerMovement : MonoBehaviour {
 		var forceX = 0f;
 		var forceY = 0f;
 	
-		var absVelX = Mathf.Abs (rigidbody2D.velocity.x);
-		var absVelY = Mathf.Abs (rigidbody2D.velocity.y);
+		var absVelX = Mathf.Abs (GetComponent<Rigidbody2D>().velocity.x);
+		var absVelY = Mathf.Abs (GetComponent<Rigidbody2D>().velocity.y);
 
 		if (absVelY < .2f)
 		{
@@ -74,6 +75,6 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
-		rigidbody2D.AddForce (new Vector2 (forceX, forceY));
+		GetComponent<Rigidbody2D>().AddForce (new Vector2 (forceX, forceY));
 	}
 }
