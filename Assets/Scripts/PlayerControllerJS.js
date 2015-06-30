@@ -1,5 +1,12 @@
 ﻿#pragma strict
 
+/*	
+	<<TESTING TESTING>>
+	
+	This class is for android devices only
+	this class is for running code with the EVAL function
+*/
+
 
 var moving  = new Vector2();	
 var up;

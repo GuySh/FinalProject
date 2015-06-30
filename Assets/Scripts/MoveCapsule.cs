@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+// TESTING FOR ANDROID
 public class MoveCapsule   : MonoBehaviour {
 
 

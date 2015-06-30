@@ -7,6 +7,16 @@ using System.Text;
 using UnityEngine.EventSystems;
 using System.Collections;
 
+
+
+/*	
+	<<TESTING TESTING>>
+	
+	This class is for android devices only
+*/
+
+
+
 public class connectionMenu : MonoBehaviour {
 
 	// Use this for initialization

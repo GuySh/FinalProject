@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-		if (controller.moving.x != 0) {			// if the player is moving
+		if (controller.moving.x != 0)
+		{			// if the player is moving
 			if (absVelX < maxVelocity.x)
 			{
 				forceX = standing ? speed * controller.moving.x : (speed * controller.moving.x * airSpeedMultiplier);
@@ -47,11 +48,11 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 			animator.SetInteger ("AnimState", 1);
-			}
-			else 
-			{
+		}
+		else 
+		{
 			animator.SetInteger ("AnimState", 0);
-			}
+		}
 
 
 		if (controller.moving.y > 0) {

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Xml.Linq;
+using System.Xml;
 
 public class LevelSelect : MonoBehaviour {
 
@@ -20,8 +22,40 @@ public class LevelSelect : MonoBehaviour {
 
 	public void StartLevel1()		// load the PushBlockStaging scene  
 	{
-		Application.LoadLevel ("PushBlockStaging");
+		PlayerInit.mode = Modes.Regular;
+		Application.LoadLevel ("Level1");
 	}
+
+	public void StartLevel1NewPlayer()		// load the PushBlockStaging scene  
+	{
+
+		PlayerInit.mode = Modes.OtherPlayer;
+		Application.LoadLevel ("Level1");
+
+	}
+
+	public void StartLevelSelectedAttributes()		// load the PushBlockStaging scene  
+	{
+		
+		PlayerInit.mode = Modes.SelectedAttributes;
+		Application.LoadLevel ("Level1");
+
+	}
+
+
+	public void StartLevelSChoiceMenu()		// load the PushBlockStaging scene  
+	{
+		Application.LoadLevel ("ChoiceMenu");
+		
+	}
+
+	public void StartLevelCommunicationMenu()		// load the PushBlockStaging scene  
+	{
+		Application.LoadLevel ("CommunicationMenu");
+		
+	}
+
+
 
 	public void StartOtherAvatar1()		// load the PushBlockStaging scene  
 	{

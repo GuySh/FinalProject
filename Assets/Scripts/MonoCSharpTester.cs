@@ -3,6 +3,11 @@ using System.Collections;
 using System;
 using Mono.CSharp;
 
+
+//
+//		TESTING FOR ANDROID!!!
+//
+//
 public class MonoCSharpTester : MonoBehaviour {
 
 
@@ -97,7 +102,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	private int m_cmdId = 0; //used to identify cmd
 
-	String method;
+	//String method;
 
 
 	// Use this for initialization
@@ -115,7 +120,7 @@ public class PlayerMovement : MonoBehaviour {
 		               "using System;"
 		               );
 
-		method = "public void print1(){Debug.Log(\"In print1()!!!\");}";
+		//method = "public void print1(){Debug.Log(\"In print1()!!!\");}";
 		//String method = "Debug.Log(\"In Method!!!\");";
 		//CompiledMethod c =  Mono.CSharp.Evaluator.Compile (method);
 
@@ -130,7 +135,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		//c.DynamicInvoke (new string[] { });
 
-		object o = new int();
+		//object o = new int();
 		//c.Invoke (ref o);
 		if (c == null)
 		{

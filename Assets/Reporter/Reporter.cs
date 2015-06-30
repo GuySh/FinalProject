@@ -308,8 +308,8 @@ public class Reporter : MonoBehaviour {
 			Application.RegisterLogCallback (new Application.LogCallback (CaptureLog));
 			Application.RegisterLogCallbackThreaded (new Application.LogCallback (CaptureLogThread));
 #else
-			Application.logMessageReceived += CaptureLog ;
-			Application.logMessageReceivedThreaded += CaptureLogThread ;
+			//Application.logMessageReceived += CaptureLog ;
+			//Application.logMessageReceivedThreaded += CaptureLogThread ;
 #endif
 			created = true ;
 			//addSample();

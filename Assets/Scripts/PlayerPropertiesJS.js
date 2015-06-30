@@ -1,5 +1,15 @@
 ﻿#pragma strict
 
+/*	
+	<<TESTING TESTING>>
+	
+	This class is for android devices only
+	this class is for running code with the EVAL function
+*/
+
+
+
+
 	var speed = 10f; 							
 	var maxVelocity = Vector2(3, 5);		
 	var standing;
