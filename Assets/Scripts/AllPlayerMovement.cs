@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class AllPlayerMovement : MonoBehaviour {
-	
+
+	public bool up,left,right;
+
 	public float speed = 10f; 							
 	public Vector2 maxVelocity = new Vector2(3, 5);		
 	public bool standing;
@@ -14,6 +16,11 @@ public class AllPlayerMovement : MonoBehaviour {
 	public Vector2 moving  = new Vector2();
 	
 	void Start (){
+		up = false;
+		left = false;
+		right = false;
+
+
 		//controller = GetComponent<PlayerController> ();		// get the PlayerController componnent
 		animator = GetComponent<Animator> ();				//// get the Animator componnent
 
@@ -41,17 +48,17 @@ public class AllPlayerMovement : MonoBehaviour {
 	void Update () {
 		moving.x = moving.y = 0;
 
-		if (Input.GetKey ("right")) 		// set the direction to right
+		if (Input.GetKey ("right") || right) 		// set the direction to right
 		{
 			moving.x = 1;
 		}
-		else if (Input.GetKey ("left")) 	// set the direction to left
+		else if (Input.GetKey ("left") || left) 	// set the direction to left
 		{
 			moving.x = -1;	
 		}
 		
 		
-		if (Input.GetKey ("up"))			// set the direction to up
+		if (Input.GetKey ("up") || up)			// set the direction to up
 		{
 			moving.y = 1;
 		}
@@ -132,5 +139,36 @@ public class AllPlayerMovement : MonoBehaviour {
 
 		//set the new force to player
 		GetComponent<Rigidbody2D>().AddForce (new Vector2 (forceX, forceY));
+	}
+
+
+	public void moveUp()			// all the functions below aare for the touch input
+	{
+		up = true;
+	}
+	
+	public void moveLeft()
+	{
+		left = true;
+	}
+	
+	public void moveRight()
+	{
+		right = true;
+	}
+	
+	public void clearUp()
+	{
+		up = false;
+	}
+	
+	public void clearLeft()
+	{
+		left = false;
+	}
+	
+	public void clearRight()
+	{
+		right = false;
 	}
 }

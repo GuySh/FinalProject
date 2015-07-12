@@ -17,6 +17,7 @@ public class Collectible : MonoBehaviour {
 	{
 		if (target.gameObject.tag == "Player")	// destroy the collictible if the player touched it
 		{
+			GameLogic.items++;
 			Destroy(gameObject);		
 		}
 	}

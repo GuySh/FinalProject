@@ -7,8 +7,8 @@ using System.Threading;
 //just drop this scrip to any empty game object on first scene your game start at
 public class TestReporter : MonoBehaviour {
 	
-	public int logTestCount = 1000 ;
-	public int threadLogTestCount = 1000 ;
+	public int logTestCount = 100 ;
+	public int threadLogTestCount = 100 ;
 	public bool logEverySecond = true;
 	int currentLogTestCount;
 	Reporter reporter ;

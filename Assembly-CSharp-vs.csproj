@@ -53,11 +53,14 @@
      <Compile Include="Assets\Reporter\Test\Rotate.cs" />
      <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\Scripts\AllPlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\AndroidMusic.cs" />
      <Compile Include="Assets\Scripts\AttributeClass.cs" />
+     <Compile Include="Assets\Scripts\BackgroundMusic.cs" />
      <Compile Include="Assets\Scripts\CSharpCodeCompiler.cs" />
      <Compile Include="Assets\Scripts\Collectible.cs" />
      <Compile Include="Assets\Scripts\CommunicationMenu.cs" />
      <Compile Include="Assets\Scripts\CustomSerialization.cs" />
+     <Compile Include="Assets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\Scripts\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\Modes.cs" />
      <Compile Include="Assets\Scripts\MonoCSharpTester.cs" />
@@ -72,10 +75,12 @@
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementMonoCsharp.cs" />
      <Compile Include="Assets\Scripts\PlayerPreSettings.cs" />
+     <Compile Include="Assets\Scripts\PlayerTochController.cs" />
      <Compile Include="Assets\Scripts\RandomSprite.cs" />
      <Compile Include="Assets\Scripts\RunTimeCompileManager.cs" />
      <Compile Include="Assets\Scripts\SelectPlayerAttributes.cs" />
      <Compile Include="Assets\Scripts\SmoothCamera2D.cs" />
+     <Compile Include="Assets\Scripts\TouchButtons.cs" />
      <Compile Include="Assets\Scripts\TouchCode.cs" />
      <Compile Include="Assets\Scripts\UserInputHandler.cs" />
      <Compile Include="Assets\Scripts\connectionMenu.cs" />
